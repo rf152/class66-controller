@@ -1,0 +1,6 @@
+[submodule "pico-mcp2515"]
+	path = pico-mcp2515
+	url = https://github.com/rf152/pico-mcp2515
+[submodule "pico-displayDrivs"]
+	path = pico-displayDrivs
+	url = https://github.com/tvlad1234/pico-displayDrivs
