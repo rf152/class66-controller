@@ -1,5 +1,12 @@
-#ifndef C66_DISPLAY_H
-#define C66_DISPLAY_H
+/* Copyright (C) 2024 Richard Franks - All Rights Reserved
+ *
+ * You may use, distribute and modify this code under the
+ * terms of the Apache 2.0 license.
+ *
+ * See LICENSE for details
+ */
+
+#pragma once
 
 #ifdef __cplusplus
 extern "C" {
@@ -24,5 +31,3 @@ void update_direction(uint8_t direction);
 #ifdef __cplusplus
 }
 #endif
-
-#endif //C66_DISPLAY_H

@@ -1,22 +1,27 @@
-#include "draw.h"
+/* Copyright (C) 2024 Richard Franks - All Rights Reserved
+ *
+ * You may use, distribute and modify this code under the
+ * terms of the Apache 2.0 license.
+ *
+ * See LICENSE for details
+ */
+
+#include "src/display/draw.h"
 #include "fonts/FreeSans24pt7b.h"
 #include "fonts/FreeSans12pt7b.h"
 #include "fonts/font-battery.h"
 #include "fonts/font-icons.h"
 
-#include <gfx/gfx.h>
-#include <ili9341/ili9341.h>
-#include "display.h"
-// #define DRAW_BOUNDING
-
+#include "gfx/gfx.h"
+#include "ili9341/ili9341.h"
+#include "src/display/display.h"
 
 void drawControllerBattery(uint8_t percent) {
     GFX_setFont(&BatteryFont);
     GFX_fillRect(320-37, 5, 32, 16, BG_COLOUR);
     uint16_t colour;
     uint8_t state;
-    if (percent == 255)
-    {
+    if (percent == 255) {
         state = 6;
     } else if (percent > 80) {
         state = 5;
@@ -50,8 +55,7 @@ void drawLocomotiveBattery(uint8_t percent) {
     GFX_fillRect(25, 55, 50, 155, BG_COLOUR);
 
     uint8_t state;
-    if (percent == 255)
-    {
+    if (percent == 255) {
         state = 0;
     } else if (percent > 80) {
         state = 5;
@@ -73,8 +77,7 @@ void drawLocomotiveBattery(uint8_t percent) {
         GFX_RGB565(0, 0x99, 0),
     };
 
-    for (int i = 0; i < state; i++ )
-    {
+    for (int i = 0; i < state; i++) {
         GFX_fillRect(25, 220 - (33 * (i + 1)), 50, 28, colours[i]);
     }
 }
@@ -98,8 +101,7 @@ void drawDirection(enum direction direction) {
     GFX_setFont(&FreeSans12pt7b);
     GFX_setCursor(100, 200);
     GFX_setTextColor(FG_COLOUR);
-    switch (direction)
-    {
+    switch (direction) {
         case FORWARD:
             GFX_write('F');
             break;
