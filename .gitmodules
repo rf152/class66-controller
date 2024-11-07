@@ -3,4 +3,5 @@
 	url = https://github.com/rf152/pico-mcp2515
 [submodule "pico-displayDrivs"]
 	path = pico-displayDrivs
-	url = https://github.com/tvlad1234/pico-displayDrivs
+	url = https://github.com/rf152/pico-displayDrivs
+	branch = myChanges
