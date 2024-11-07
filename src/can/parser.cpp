@@ -9,7 +9,6 @@
 #include "src/can/parser.h"
 
 #include <stdio.h>
-#include <cstdio>
 #include "pico/stdlib.h"
 
 #include "src/can/protocol.h"
@@ -18,7 +17,7 @@
 #define MY_ID 0x20
 
 
-void parseFrame(struct can_frame *canMsg) {
+void parse_frame(struct can_frame *canMsg) {
     canid_t id = canMsg->can_id;
     uint16_t node = id & MASK_NODE;
     printf("New frame from ID: %10x\n", id);
@@ -31,13 +30,13 @@ void parseFrame(struct can_frame *canMsg) {
             uint8_t offset = 0;
             bool cont = true;
             while (cont) {
-                cont = _extractSensor(canMsg->data, &offset);
+                cont = _extract_sensor(canMsg->data, &offset);
             }
         }
     }
 }
 
-bool _extractSensor(uint8_t data[8], uint8_t *offset) {
+bool _extract_sensor(uint8_t data[8], uint8_t *offset) {
     uint8_t sensorId;
     uint8_t base = *offset;
 
