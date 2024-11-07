@@ -10,6 +10,7 @@ struct repeating_timer displayTimer;
 bool timerTick(__unused struct repeating_timer *t)
 {
     display_refresh();
+    return true;
 }
 
 int main()

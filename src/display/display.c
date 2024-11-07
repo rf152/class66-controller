@@ -13,7 +13,9 @@ void display_init()
 {
     LCD_setPins(7, 9, 12, 18, 19);
     LCD_setSPIperiph(spi0);
+    LCD_setSPIspeed(10000000);
     LCD_initDisplay();
+    LCD_setResolution(320, 240);
     LCD_setRotation(0);
     GFX_createFramebuf();
     GFX_setClearColor(BG_COLOUR);
